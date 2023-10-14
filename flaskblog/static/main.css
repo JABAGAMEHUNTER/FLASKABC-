@@ -9,9 +9,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-steel {
-  background-color: #5f788a;
+  background-color:  #74F674;
 }
 
+.bg-menta {
+  background-color:  #00DD00;
+}
+
+.bg-mento {
+  background-color:  #1C5D1C;
+}
 .site-header .navbar-nav .nav-link {
   color: #cbd5db;
 }
@@ -77,4 +84,9 @@ a.article-title:hover {
 
 .account-heading {
   font-size: 2.5rem;
+}
+
+.content-login {
+  background: url("https://img.freepik.com/premium-photo/empty-wooden-table-top-with-blur-background-amazon-rainforest-generative-ai-aig30_31965-152830.jpg");
+ background-size: cover; 
 }

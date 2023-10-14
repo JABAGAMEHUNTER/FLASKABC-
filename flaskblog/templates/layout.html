@@ -11,35 +11,42 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
 
     {% if title %}
-    	<title>Flask Blog - {{ title }}</title>
+    	<title>AGCO² - {{ title }}</title>
     {% else %}
-    	<title>Flask Blog</title>
+    	<title>AGCO²</title>
     {% endif %}
 </head>
-<body>
+<body class="content-login">
 	<header class="site-header">
-	      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-		<div class="container">
-		  <a class="navbar-brand mr-4" href="/">Flask Blog</a>
+	      <nav class="navbar navbar-expand-md navbar-dark bg-mento fixed-top">
+		<div class="container bg-mento">
+		  <img src="static/logo.png" style="width:40px; height:50px;" class="navbar-brand mr4" alt="AGCO²">
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
 		  <div class="collapse navbar-collapse" id="navbarToggle">
+			    <ul style="text-align: center; display: inline-block;">
+				    <li style="display: inline-block;" class="nav-item nav-link"><a style="color: white;" href="{{ url_for('noticias.news') }}">Notícias<a/></li>
+				    <li style="display: inline-block;"class="nav-item nav-link"><a style="color: white;" href="{{ url_for('cursos.capacit') }}">Capacitação</a></li>
+				    <li style="display: inline-block;"class="nav-item nav-link"><a style="color: white;" href="{{ url_for('main.produtores') }}">Produtores</a></li>
+			    </ul>
 		    <div class="navbar-nav mr-auto">
-			    <a class="nav-item nav-link" href="{{ url_for('main.home') }}">Home</a>
-			    <a class="nav-item nav-link" href="{{ url_for('main.about') }}">About</a>
-		    </div>
+		    <div class="navbar-nav mr-auto">
+
+		    <a style="margin-top: -10px;" class="nav-item nav-link" href="{{ url_for('main.about') }}">Quem Somos</a>
 		    <!-- Navbar Right Side -->
 		    <div class="navbar-nav">
 		    {% if current_user.is_authenticated %}
 
-		    <a class="nav-item nav-link" href="{{ url_for('posts.new_post') }}">Nova Postagem</a>
-		    <a class="nav-item nav-link" href="{{ url_for('users.account') }}">Account</a>
+		    <a style="margin-top: -10px;" class="nav-item nav-link" href="{{ url_for('posts.new_post') }}">Nova Postagem</a>
 
-		    <a class="nav-item nav-link" href="{{ url_for('users.logout') }}">Logout</a>
+		    <a style="margin-top: -10px;" class="nav-item nav-link" href="{{ url_for('users.myposts') }}">Minhas publicações</a>
+		    <a style="margin-top: -10px;" class="nav-item nav-link" href="{{ url_for('users.account') }}">Conta</a>
+
+		    <a style="margin-top: -10px;" class="nav-item nav-link" href="{{ url_for('users.logout') }}">Sair</a>
 		    {% else %}
-		    <a class="nav-item nav-link" href="{{ url_for('users.login') }}">Login</a>
-		    <a class="nav-item nav-link" href="{{ url_for('users.register') }}">Register</a>
+		    <a style="margin-top: -10px;" class="nav-item nav-link" href="{{ url_for('users.login') }}">Entrar</a>
+		    <a style="margin-top: -10px;" class="nav-item nav-link" href="{{ url_for('users.register') }}">Registrar-se</a>
 		    {% endif %}
 		    </div>
 		  </div>
@@ -62,13 +69,13 @@
 		</div>
 		<div class="col-md-4">
 		  <div class="content-section">
-		    <h3>Our Sidebar</h3>
-		    <p class='text-muted'>You can put any information here you'd like.
+		    <h3>Links e Parceitos</h3>
+		    <p class='text-muted'>Acesse os projetos de parceiros!
 		      <ul class="list-group">
-			<li class="list-group-item list-group-item-light">Latest Posts</li>
-			<li class="list-group-item list-group-item-light">Announcements</li>
-			<li class="list-group-item list-group-item-light">Calendars</li>
-			<li class="list-group-item list-group-item-light">etc</li>
+			<li class="list-group-item list-group-item-light">ABC+ 2030</li>
+			<li class="list-group-item list-group-item-light">Plataforma GOV</li>
+			<li class="list-group-item list-group-item-light"><a href="https://algorand.com/">Algorand - Blockchain Sustentável</a></li>
+			<li class="list-group-item list-group-item-light"><a href="https://www.web3dev.com.br/">WEB3DEV</a></li>
 		      </ul>
 		    </p>
 		  </div>
